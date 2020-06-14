@@ -5,10 +5,8 @@ const saltRounds = 10;
 const jwt = require('jsonwebtoken'); 
 const config = require('../config');
 
-
 module.exports = {
-
-
+    
 async auth(req,res){
 
     const userEmail = req.body.email;
