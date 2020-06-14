@@ -5,8 +5,11 @@ const ticketController = require('./controller/ticketController');
 const projectController = require('./controller/projectController');
 
 //User endpoints
+routes.post('/auth',userController.auth);
 routes.post('/user',userController.addUser);
 routes.get('/user',userController.getUsers);
+routes.get('/user/:id',userController.getUserById);
+routes.get('/user/email/:email',userController.getUserByEmail);
 
 //Ticket endpoints
 

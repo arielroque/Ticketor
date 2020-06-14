@@ -17,7 +17,7 @@ module.exports = {
 
         const project = new Project({
             name: req.body.name,
-            cordinatorId: req.body.cordinatorId,
+            room: req.body.room,
             created: req.body.created
         });
 
