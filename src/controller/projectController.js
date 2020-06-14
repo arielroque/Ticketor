@@ -1,7 +1,6 @@
 
 const {Project} = require('../models/project');
 
-
 module.exports = {
     async getProjects(req,res){
         Project.find((err,docs)=>{
