@@ -282,6 +282,6 @@ routes.post('/project',projectController.addProject);
  *     
  */
 
-routes.get('/project',projectController.getProjects);
 
+routes.get('/project',projectController.getProjects);
 module.exports = routes;
