@@ -145,6 +145,57 @@ routes.get('/user/:id',userController.getUserById);
 routes.get('/user/email/:email',userController.getUserByEmail);
 
 //Ticket endpoints
+
+/**
+ * @swagger
+ * /ticket:
+ *   post:
+ *     description:  Insert new ticket
+ * 
+ *     parameters: [
+          {
+            name: 'name',
+            in: 'body',
+            
+            required: true,
+            description: 'User name to be registered'
+          },
+          {
+            name: 'password',
+            in: 'body',
+    
+            required: true,
+            description: 'User password to be registered'
+          },
+
+          {
+            name: 'e-mail',
+            in: 'body',
+    
+            required: true,
+            description: 'User email to be registered'
+          },
+
+          {
+            name: 'projectId',
+            in: 'body',
+            required: false,
+            description: 'Project id linked with user'
+          },
+
+          {
+            name: 'type',
+            in: 'body',
+            required: true,
+            description: 'Account Type (general, support)'
+          }
+        ]
+ *     responses:
+ *      '200':
+ *       description: A successful response with token to use in next requests
+ *  
+ *     
+ */
 routes.post('/ticket',ticketController.addTicket);
 
 /**
@@ -164,8 +215,60 @@ routes.get('/ticket',ticketController.getTickets);
 
 
 //Project endpoints
-routes.post('/project',projectController.addProject);
 
+/**
+ * @swagger
+ * /project:
+ *   post:
+ *     description:  Insert new users in the database
+ * 
+ *     parameters: [
+          {
+            name: 'name',
+            in: 'body',
+            
+            required: true,
+            description: 'User name to be registered'
+          },
+          {
+            name: 'password',
+            in: 'body',
+    
+            required: true,
+            description: 'User password to be registered'
+          },
+
+          {
+            name: 'e-mail',
+            in: 'body',
+    
+            required: true,
+            description: 'User email to be registered'
+          },
+
+          {
+            name: 'projectId',
+            in: 'body',
+            required: false,
+            description: 'Project id linked with user'
+          },
+
+          {
+            name: 'type',
+            in: 'body',
+            required: true,
+            description: 'Account Type (general, support)'
+          }
+        ]
+ *     responses:
+ *      '200':
+ *       description: A successful response with token to use in next requests
+ *  
+ *     
+ */
+
+
+routes.post('/project',projectController.addProject);
 /**
  * @swagger
  * /project:
