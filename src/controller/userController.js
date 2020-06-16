@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
 module.exports = {
-     
+    
 async getUsers(req,res){
     User.find((err,docs)=>{
         if(err){
