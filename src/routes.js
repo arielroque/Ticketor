@@ -162,6 +162,7 @@ routes.post('/ticket',ticketController.addTicket);
 
 routes.get('/ticket',ticketController.getTickets);
 
+
 //Project endpoints
 routes.post('/project',projectController.addProject);
 
