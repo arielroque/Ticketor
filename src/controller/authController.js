@@ -10,14 +10,14 @@ module.exports={
         if(token){
             jwt.verify(token,config.jwtSecret,(err,decoded)=>{
                 if(err){
-                    return res.send({success:false,message:'Invalid Token'});
+                    return res.status(401).send({success:false,message:'Invalid Token'});
                 }
 
                 req.decoded = decoded;
                 next();
             });
         }else{
-        return res.status(203).send({success:false,message:'Token not sent in request'});
+        return res.status(400).send({success:false,message:'Token not sent in request'});
         }
 
     },
@@ -29,11 +29,11 @@ module.exports={
     
         User.findOne({email:userEmail},async (err,docs)=>{
             if(err){
-                return res.send(`Error ${JSON.stringify(err,undefined,2)}`);
+                return res.status(500).send({"success":"false","message":`${JSON.stringify(err,undefined,2)}`});
             }
             
             if(docs == null){
-                return res.send(`Invalid E-mail`);
+                return res.status(400).send({"success":"false","message":"Invalid E-mail"});
             }
     
             const passwordHash = docs.password;
@@ -53,7 +53,7 @@ module.exports={
             }
     
             else{
-                res.send("senha incorreta");
+                res.send({"success":"false","message":"Invalid password"});
             }
         });   
     }
