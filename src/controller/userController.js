@@ -8,7 +8,7 @@ module.exports = {
 async getUsers(req,res){
     User.find((err,docs)=>{
         if(err){
-            return res.send(`Error ${JSON.stringify(err,undefined,2)}`);
+            return res.status(500).send(err);
         }
         return res.send(docs);
     });
@@ -18,11 +18,11 @@ async getUserById(req,res){
     const userID = req.params.id;
 
     if (!ObjectId.isValid(req.params.id))
-        return res.status(400).send(`No user with given id :${req.params.id}`);
+        return res.status(400).send({"Error":`No user with given id :${req.params.id}`});
 
     User.findById(userID,(err,docs)=>{
         if(err){
-            return res.send(`Error ${JSON.stringify(err,undefined,2)}`);
+            return res.status(500).send(err);
         }
 
         return res.send(docs);
@@ -35,7 +35,7 @@ async getUserByEmail(req,res){
 
     User.findOne({email:userEmail},(err,docs)=>{
         if(err){
-            return res.send(`Error ${JSON.stringify(err,undefined,2)}`);
+            return res.status(500).send(err);
         }
         return res.send(docs);
     });   
@@ -56,7 +56,7 @@ async addUser(req,res){
 
     user.save((err,docs)=>{
         if(err){
-            res.send(`Error ${JSON.stringify(err,undefined,2)}`);
+            res.status(400).send(err);
         }
         return res.send(docs);
     });

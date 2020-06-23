@@ -5,7 +5,7 @@ module.exports = {
     async getTickets(req,res){
         Ticket.find((err,docs)=>{
             if(err){
-                res.send(`Error ${JSON.stringify(err,undefined,2)}`);
+                res.status(400).send(err);
             }
             return res.send(docs);
         });
@@ -21,7 +21,7 @@ module.exports = {
 
         ticket.save((err,docs)=>{
             if(err){
-                res.send(`Error ${JSON.stringify(err,undefined,2)}`);
+                res.status(400).send(err);
             }
             return res.send(docs);
         });

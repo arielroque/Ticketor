@@ -5,7 +5,7 @@ module.exports = {
     async getProjects(req,res){
         Project.find((err,docs)=>{
             if(err){
-                res.send(`Error ${JSON.stringify(err,undefined,2)}`);
+                res.status(400).send(err);
             }
 
             return res.send(docs);
@@ -22,7 +22,7 @@ module.exports = {
 
         project.save((err,docs)=>{
             if(err){
-                res.send(`Error ${JSON.stringify(err,undefined,2)}`);
+                res.status(400).send(err);
             }
             return res.send(docs);
         });

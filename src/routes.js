@@ -67,7 +67,7 @@ routes.use(authController.verifyToken);
  *     parameters:
 *        - in: body
 *          name: user
-*          description: The user to create.
+*          description: User body
 *          schema:
 *            type: object
 *            required:
@@ -89,7 +89,7 @@ routes.use(authController.verifyToken);
  *     
  *     responses:
  *      '200': {
-            description: 'Added User',
+            description: 'Inserted user response',
             examples: {
               'application/json': {
                 "_id": "5ee62efa00b112253526bd7c",
@@ -101,8 +101,8 @@ routes.use(authController.verifyToken);
 }
             }
           }
- *      '400': {
-            description: 'Invalid Token',
+ *      '401': {
+            description: 'Invalid token',
             examples: {
               'application/json': {
               "success": false,
@@ -124,7 +124,7 @@ routes.post('/user',userController.addUser);
  * 
  *     responses:
  *      '200': {
-            description: 'Get all users registered',
+            description: 'Users registered response',
             examples: {
               'application/json': {
                 "_id": "5ee62efa00b112253526bd7c",
@@ -136,12 +136,12 @@ routes.post('/user',userController.addUser);
 }
             }
           }
- *      '400': {
+ *      '401': {
             description: 'Invalid Token',
             examples: {
               'application/json': {
               "success": false,
-              "message": "Invalid Token"
+              "message": "Invalid token"
               }
             }
           }
@@ -155,11 +155,11 @@ routes.get('/user',userController.getUsers);
  * @swagger
  * /user:id:
  *   get:
- *     description:  Get all user by id
+ *     description:  Get user by id
  * 
  *     responses:
  *      '200': {
-            description: 'Get user by id',
+            description: 'User response',
             examples: {
               'application/json': {
                 "_id": "5ee62efa00b112253526bd7c",
@@ -171,8 +171,8 @@ routes.get('/user',userController.getUsers);
 }
             }
           }
- *      '400': {
-            description: 'Invalid Token',
+ *      '401': {
+            description: 'Invalid token',
             examples: {
               'application/json': {
               "success": false,
@@ -194,7 +194,7 @@ routes.get('/user/:id',userController.getUserById);
  * 
  *     responses:
  *      '200': {
-            description: 'Get user by e-mail',
+            description: 'User response',
             examples: {
               'application/json': {
                 "_id": "5ee62efa00b112253526bd7c",
@@ -206,8 +206,8 @@ routes.get('/user/:id',userController.getUserById);
 }
             }
           }
- *      '400': {
-            description: 'Invalid Token',
+ *      '401': {
+            description: 'Invalid token',
             examples: {
               'application/json': {
               "success": false,
@@ -229,10 +229,51 @@ routes.get('/user/email/:email',userController.getUserByEmail);
  *   post:
  *     description:  Insert new ticket
  * 
-      
+ *     parameters:
+*        - in: body
+*          name: user
+*          description: Ticket body
+*          schema:
+*            type: object
+*            required:
+*              - title
+*              - description
+*              - priority
+*              - authorId
+*            properties:
+*              title:
+*                type: string
+*              description:
+*                type: string
+*              priority:
+*                type: string
+*              authorId:
+*                type: string
+ *     
  *     responses:
- *      '200':
- *       description: A successful response with token to use in next requests
+ *      '200': {
+            description: 'Inserted Ticket Response',
+            examples: {
+              'application/json': {
+                "_id": "5ef1e80c8557a150954dcfc2",
+                "title": "Windows problem",
+                "description": "My computer has broken",
+                "priority": "High",
+                "authorId": "5ee62e653b7fbc232f71aeaa",
+                "date": "2020-06-23T11:31:24.904Z",
+                "__v": 0
+}
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
  *  
  *     
  */
@@ -241,48 +282,24 @@ routes.post('/ticket',ticketController.addTicket);
 /**
  * @swagger
  * /ticket:
- *   post:
- *     description:  Insert new users in the database
+ *   get:
+ *     description:  Get all tickets registered
  * 
- *     parameters:
-*        - in: body
-*          name: user
-*          description: The user to create.
-*          schema:
-*            type: object
-*            required:
-*              - name
-*              - email
-*              - password
-*              - type
-*            properties:
-*              name:
-*                type: string
-*              email:
-*                type: string
-*              password:
-*                type: string
-*              projectId:
-*                type: string
-*              type:
-*                type: string
- *     
  *     responses:
  *      '200': {
-            description: 'Added User',
+            description: 'Tickets registered response',
             examples: {
               'application/json': {
-                "_id": "5ee62efa00b112253526bd7c",
-                "name": "Jorge Barry",
-                "password": "$2a$10$m6E.FlYQCsiE4hRz2deUMuHnrnGIgltgR0Ns.GV66DzlafZ9O8pNy",
-                "email": "support@gmail.com",
-                "type": "support",
-                "__v": 0
-}
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
             }
           }
- *      '400': {
-            description: 'Invalid Token',
+ *      '401': {
+            description: 'Invalid token',
             examples: {
               'application/json': {
               "success": false,
@@ -303,51 +320,43 @@ routes.get('/ticket',ticketController.getTickets);
  * @swagger
  * /project:
  *   post:
- *     description:  Insert new users in the database
+ *     description:  Insert new project
  * 
- *     parameters: [
-          {
-            name: 'name',
-            in: 'body',
-            
-            required: true,
-            description: 'User name to be registered'
-          },
-          {
-            name: 'password',
-            in: 'body',
-    
-            required: true,
-            description: 'User password to be registered'
-          },
-
-          {
-            name: 'e-mail',
-            in: 'body',
-    
-            required: true,
-            description: 'User email to be registered'
-          },
-
-          {
-            name: 'projectId',
-            in: 'body',
-            required: false,
-            description: 'Project id linked with user'
-          },
-
-          {
-            name: 'type',
-            in: 'body',
-            required: true,
-            description: 'Account Type (general, support)'
-          }
-        ]
+ *     parameters:
+*        - in: body
+*          name: user
+*          description: Project body
+*          schema:
+*            type: object
+*            required:
+*              - name
+*              - room
+*              - created
+*              
+*            properties:
+*              title:
+*                type: string
+*              description:
+*                type: string
+*              created:
+*                type: string
+*              
+ * 
  *     responses:
- *      '200':
- *       description: A successful response with token to use in next requests
- *      '400': {
-            description: 'Invalid Token',
+ *      '200': {
+            description: 'Inserted project response',
+            examples: {
+              'application/json': {
+              "_id": "5ee82652fbd2c72a6ff9d021",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+}
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
             examples: {
               'application/json': {"success": false,"message": "Token not sent in request"
 }
@@ -366,8 +375,18 @@ routes.post('/project',projectController.addProject);
  *     description:  Get all project registered
  * 
  *     responses:
- *      '200':
- *       description: A successful response with token to use in next requests
+ *      '200': {
+            description: 'Projects response',
+            examples: {
+              'application/json': {
+              "_id": "5ee82652fbd2c72a6ff9d021",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+}
+            }
+          }
  *  
  *     
  */

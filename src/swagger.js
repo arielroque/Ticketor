@@ -5,7 +5,7 @@ const options = {
     basePath: '/',
     swaggerDefinition: {
       info: {
-        description: 'Ticketor is a simple helpdesk API to assist users in contacting support ',
+        description: 'Ticketor is a helpdesk API to assist users in contacting support ',
         swagger: '2.0',
         title: 'Ticketor API',
         version: '1.2.0',
