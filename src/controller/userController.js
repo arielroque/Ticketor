@@ -6,6 +6,13 @@ const saltRounds = 10;
 module.exports = {
     
 async getUsers(req,res){
+
+    const accountType = req.decoded.data.type;
+    
+    if(accountType != "support"){
+        return res.status(401).send({"Error":"Account is not authorized for this action"})
+    }
+
     User.find((err,docs)=>{
         if(err){
             return res.status(500).send(err);
@@ -16,6 +23,11 @@ async getUsers(req,res){
 async getUserById(req,res){
 
     const userID = req.params.id;
+    const accountType = req.decoded.data.type;
+    
+    if(accountType != "support"){
+        return res.status(401).send({"Error":"Account is not authorized for this action"})
+    }
 
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send({"Error":`No user with given id :${req.params.id}`});
@@ -30,6 +42,12 @@ async getUserById(req,res){
 },
 
 async getUserByEmail(req,res){
+
+    const accountType = req.decoded.data.type;
+    
+    if(accountType != "support"){
+        return res.status(401).send({"Error":"Account is not authorized for this action"})
+    }
 
     const userEmail = req.params.email;
 

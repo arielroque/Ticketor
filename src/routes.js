@@ -7,9 +7,10 @@ const authController = require('./controller/authController');
 const swaggerUi = require('swagger-ui-express');
 const swagger = require('../src/swagger');
 
-//Swag Documentation endpoint
+//Swagger Documentation endpoint
 routes.use('/docs', swaggerUi.serve);
-routes.get('/docs', swaggerUi.setup(swagger));;
+routes.get('/docs', swaggerUi.setup(swagger));
+
 
 //Auth Verification endpoints
 
@@ -312,6 +313,47 @@ routes.post('/ticket',ticketController.addTicket);
  */
 
 routes.get('/ticket',ticketController.getTickets);
+
+routes.get('/ticket/solved',ticketController.getSolvedTickets);
+
+routes.get('/ticket/unsolved',ticketController.getUnsolvedTickets);
+
+
+routes.get('/ticket/:email',ticketController.getTicketsByEmail);
+
+routes.get('/ticket/:email/solved',ticketController.getSolvedTicketsByEmail);
+
+routes.get('/ticket/:email/solved/high',ticketController.getSolvedTicketsByEmailHighPriority);
+
+routes.get('/ticket/:email/solved/medium',ticketController.getSolvedTicketsByEmailMediumPriority);
+
+routes.get('/ticket/:email/solved/low',ticketController.getSolvedTicketsByEmailLowPriority);
+
+
+routes.get('/ticket/:email/unsolved',ticketController.getUnsolvedTicketsByEmail);
+
+routes.get('/ticket/:email/unsolved/high',ticketController.getUnsolvedTicketsByEmailHighPriority);
+
+routes.get('/ticket/:email/unsolved/medium',ticketController.getUnsolvedTicketsByEmailMediumPriority);
+
+routes.get('/ticket/:email/unsolved/low',ticketController.getUnsolvedTicketsByEmailLowPriority);
+
+
+routes.get('/ticket/solved/high',ticketController.getTicketsByHighPriority);
+
+routes.get('/ticket/solved/medium',ticketController.getTicketsByMediumPriority);
+
+routes.get('/ticket/solved/low',ticketController.getTicketsByLowPriority);
+
+
+routes.get('/ticket/unsolved/high',ticketController.getTicketsByHighPriority);
+
+routes.get('/ticket/unsolved/medium',ticketController.getTicketsByMediumPriority);
+
+routes.get('/ticket/unsolved/low',ticketController.getTicketsByLowPriority);
+
+
+routes.patch('/ticket/:id/solver',ticketController.solverTicket);
 
 
 //Project endpoints

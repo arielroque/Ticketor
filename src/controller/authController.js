@@ -10,14 +10,14 @@ module.exports={
         if(token){
             jwt.verify(token,config.jwtSecret,(err,decoded)=>{
                 if(err){
-                    return res.status(401).send({success:false,message:'Invalid Token'});
+                    return res.status(401).send({"success":"false","message":'Invalid Token'});
                 }
 
                 req.decoded = decoded;
                 next();
             });
         }else{
-        return res.status(400).send({success:false,message:'Token not sent in request'});
+        return res.status(400).send({"success":"false","message":'Token not sent in request'});
         }
 
     },
