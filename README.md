@@ -2,9 +2,15 @@
 ![logo do ticketor](https://user-images.githubusercontent.com/17733053/85210608-c5a89180-b317-11ea-9d13-5b326778f59f.png)
 
 <p align="center">
-    <a href="https://www.python.org/downloads/">
-        <img src="https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue"
-            alt="Python 3.5-3.7"/></a>
+    <a href="#">
+        <img src="https://img.shields.io/badge/ticketor-v.1.0-brightgreen"
+            alt="Ticketor version"/></a>
+    <a href="https://www.npmjs.com/">
+        <img src="https://img.shields.io/npm/v/npm"
+            alt="npm"/></a>
+    <a href="https://www.npmjs.com/package/jsonwebtoken">
+        <img src="https://img.shields.io/badge/jsonwebtoken-latest-brightgreen"
+            alt="jsonwebtoken"/></a>
     <a href="https://opensource.org/licenses/MIT">
         <img src="https://img.shields.io/badge/License-MIT-yellow.svg"
             alt="License: MIT"/></a>
