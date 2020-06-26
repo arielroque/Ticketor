@@ -20,6 +20,10 @@
 # Ticketor
 Ticketor is a helpdesk API to assist users in contacting support 
 
+
+### Note
+It is important that in production you NEVER HAVE YOUR SECRET KEY VISIBLE like left in config.js. Your secret key should be stored in an environment variable, like all sensitive information.
+
 ## Features
  - Token Based Authentication
  <p align="left">
@@ -41,6 +45,17 @@ Ticketor is a helpdesk API to assist users in contacting support
 
 
 ## Installation
+
+Install node dependencies from API
+
+```
+npm install
+```
+Start API service with the following code
+
+```
+npm start
+```
 
 ## Contributing
 
