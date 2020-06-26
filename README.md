@@ -36,6 +36,6 @@ Ticketor is a helpdesk API to assist users in contacting support
 
 ## Contributing
 
-Pull request are also welcome , please read  [CONTRIBUTING.md](https://github.com/arielroque/Mi-action/blob/developer/CONTRIBUTING.md)  for details on our code of conduct, and the process for submitting pull requests to us.
+Pull request are also welcome , please read  [CONTRIBUTING.md](https://github.com/arielroque/Ticketor/blob/master/CONTRIBUTING.md)  for details on our code of conduct, and the process for submitting pull requests to us.
     
--   Check  [issue templates](https://github.com/arielroque/Mi-action/issues)  for the suggested issue formats
+-   Check  [issue templates](https://github.com/arielroque/Ticketor/issues)  for the suggested issue formats
