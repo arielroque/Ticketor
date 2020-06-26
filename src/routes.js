@@ -314,43 +314,625 @@ routes.post('/ticket',ticketController.addTicket);
 
 routes.get('/ticket',ticketController.getTickets);
 
+/**
+ * @swagger
+ * /ticket/solved:
+ *   get:
+ *     description:  Get all solved tickets registered
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Solved tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
+
 routes.get('/ticket/solved',ticketController.getSolvedTickets);
+
+/**
+ * @swagger
+ * /ticket/unsolved:
+ *   get:
+ *     description:  Get all unsolved tickets registered
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Unsolved tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
 
 routes.get('/ticket/unsolved',ticketController.getUnsolvedTickets);
 
 
+/**
+ * @swagger
+ * /ticket/:email:
+ *   get:
+ *     description:  Get all tickets inserted by a user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
+
 routes.get('/ticket/:email',ticketController.getTicketsByEmail);
+
+/**
+ * @swagger
+ * /ticket/:email/solved:
+ *   get:
+ *     description:  Get all solved tickets registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
 
 routes.get('/ticket/:email/solved',ticketController.getSolvedTicketsByEmail);
 
+/**
+ * @swagger
+ * /ticket/:email/solved/high:
+ *   get:
+ *     description:  Get all solved tickets with high priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
 routes.get('/ticket/:email/solved/high',ticketController.getSolvedTicketsByEmailHighPriority);
 
-routes.get('/ticket/:email/solved/medium',ticketController.getSolvedTicketsByEmailMediumPriority);
+/**
+ * @swagger
+ * /ticket/:email/solved/medium:
+ *   get:
+ *     description:  Get all solved tickets with medium priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
+routes.get('/ticket/:email/solved/low',ticketController.getSolvedTicketsByEmailMediumPriority);
+
+/**
+ * @swagger
+ * /ticket/:email/solved/low:
+ *   get:
+ *     description:  Get all solved tickets with low priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
 
 routes.get('/ticket/:email/solved/low',ticketController.getSolvedTicketsByEmailLowPriority);
+
+/**
+ * @swagger
+ * /ticket/:email/unsolved/:
+ *   get:
+ *     description:  Get all unsolved tickets  registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
 
 
 routes.get('/ticket/:email/unsolved',ticketController.getUnsolvedTicketsByEmail);
 
+/**
+ * @swagger
+ * /ticket/:email/umsolved/high:
+ *   get:
+ *     description:  Get all umsolved tickets with high priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
 routes.get('/ticket/:email/unsolved/high',ticketController.getUnsolvedTicketsByEmailHighPriority);
 
+/**
+ * @swagger
+ * /ticket/:email/unsolved/medium:
+ *   get:
+ *     description:  Get all unsolved tickets with medium priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
 routes.get('/ticket/:email/unsolved/medium',ticketController.getUnsolvedTicketsByEmailMediumPriority);
+
+/**
+ * @swagger
+ * /ticket/:email/solved/low:
+ *   get:
+ *     description:  Get all unsolved tickets with low priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
 
 routes.get('/ticket/:email/unsolved/low',ticketController.getUnsolvedTicketsByEmailLowPriority);
 
 
+/**
+ * @swagger
+ * /ticket/:email/solved/high:
+ *   get:
+ *     description:  Get all solved tickets with high priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
+
 routes.get('/ticket/solved/high',ticketController.getTicketsByHighPriority);
+
+/**
+ * @swagger
+ * /ticket/solved/medium:
+ *   get:
+ *     description:  Get all solved tickets with medium priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
 
 routes.get('/ticket/solved/medium',ticketController.getTicketsByMediumPriority);
 
+/**
+ * @swagger
+ * /ticket/solved/low:
+ *   get:
+ *     description:  Get all solved tickets with low priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
 routes.get('/ticket/solved/low',ticketController.getTicketsByLowPriority);
+
+/**
+ * @swagger
+ * /ticket/unsolved/high:
+ *   get:
+ *     description:  Get all unsolved tickets with high priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
 
 
 routes.get('/ticket/unsolved/high',ticketController.getTicketsByHighPriority);
 
+/**
+ * @swagger
+ * /ticket/unsolved/medium:
+ *   get:
+ *     description:  Get all solved tickets with medium priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
 routes.get('/ticket/unsolved/medium',ticketController.getTicketsByMediumPriority);
 
+
+/**
+ * @swagger
+ * /ticket/:email/solved/low:
+ *   get:
+ *     description:  Get all solved tickets with low priority registered by user
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
+
 routes.get('/ticket/unsolved/low',ticketController.getTicketsByLowPriority);
+
+
+/**
+ * @swagger
+ * /ticket/:id/solver:
+ *   patch:
+ *     description:  Solver a ticket passed with id
+ * 
+ *     responses:
+ *      '200': {
+            description: 'Tickets registered response',
+            examples: {
+              'application/json': {
+              "_id": "5ee62e073b7fbc232f71aea8",
+              "name": "Insominia",
+              "room": "12b",
+              "created": "2019-03-19T00:00:00.000Z",
+              "__v": 0
+  }
+            }
+          }
+ *      '401': {
+            description: 'Invalid token',
+            examples: {
+              'application/json': {
+              "success": false,
+              "message": "Invalid Token"
+              }
+            }
+          }
+ *  
+ *     
+ */
 
 
 routes.patch('/ticket/:id/solver',ticketController.solverTicket);
