@@ -18,11 +18,7 @@
 </p>
 
 # Ticketor
-Ticketor is a helpdesk API to assist users in contacting support 
-
-
-### Note
-It is important that in production you NEVER HAVE YOUR SECRET KEY VISIBLE like left in config.js. Your secret key should be stored in an environment variable, like all sensitive information.
+Ticketor is a helpdesk API to assist users in contacting support. We safely handle tickets sent to technical support, filtering in different ways
 
 ## Features
  - Token Based Authentication
@@ -41,13 +37,12 @@ It is important that in production you NEVER HAVE YOUR SECRET KEY VISIBLE like l
  </p>  
  
  - Swagger Endpoints documentation
-
-
+   Start the API(see instalation topic below) end go to [Swagger documentation endpoint](http://localhost:5000/docs/)
+   
 
 ## Installation
 
 Install node dependencies from API
-
 ```
 npm install
 ```
@@ -56,6 +51,9 @@ Start API service with the following code
 ```
 npm start
 ```
+
+### Note
+It is important that in production you NEVER HAVE YOUR SECRET KEY VISIBLE like left in [config.js](https://github.com/arielroque/Ticketor/blob/master/src/config.js). Your secret key should be stored in an environment variable, like all sensitive information.
 
 ## Contributing
 
