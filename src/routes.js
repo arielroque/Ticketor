@@ -11,9 +11,6 @@ const swagger = require('../src/swagger');
 routes.use('/docs', swaggerUi.serve);
 routes.get('/docs', swaggerUi.setup(swagger));
 
-
-//Auth Verification endpoints
-
 /**
  * @swagger
  * /auth:
