@@ -53,6 +53,9 @@ npm start
 ```
 
 ### Note
+
+By default a root user is ACTIVATED in the database (go to [config.js](https://github.com/arielroque/Ticketor/blob/master/src/config.js)), we recommend that you create your own users and then DISABLE this feature.
+
 It is important that in production you NEVER HAVE YOUR SECRET KEY VISIBLE like left in [config.js](https://github.com/arielroque/Ticketor/blob/master/src/config.js). Your secret key should be stored in an environment variable, like all sensitive information.
 
 ## Contributing
