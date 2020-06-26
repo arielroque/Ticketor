@@ -29,7 +29,8 @@ Ticketor is a helpdesk API to assist users in contacting support
     <img src="https://user-images.githubusercontent.com/17733053/85625011-2817cf80-b641-11ea-9513-cb1f902c288b.png"/>
  </p>   
  
- - Swagger Endpoints documentation 
+ - Swagger Endpoints documentation
+ ![password](https://user-images.githubusercontent.com/17733053/85808330-e5322680-b72a-11ea-94f3-ad4d30b972d6.png)
 
 
 ## Installation
