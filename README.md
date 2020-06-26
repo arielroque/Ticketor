@@ -22,12 +22,19 @@ Ticketor is a helpdesk API to assist users in contacting support
 
 ## Features
  - Token Based Authentication
- ![token](https://user-images.githubusercontent.com/17733053/85624881-f69f0400-b640-11ea-86c7-c82a0d0c409e.png)
+ <p align="left">
+    <img src="https://user-images.githubusercontent.com/17733053/85808576-a650a080-b72b-11ea-8b78-f73f9406500e.png"/>
+ </p> 
  
  - Endpoint access by types of users
  <p align="left">
+    <img src="https://user-images.githubusercontent.com/17733053/85808441-3d692880-b72b-11ea-8969-8734d5dd7a0d.png"/>
+ </p> 
+ 
+ - Encrypted Password
+ <p align="left">
     <img src="https://user-images.githubusercontent.com/17733053/85808330-e5322680-b72a-11ea-94f3-ad4d30b972d6.png"/>
- </p>   
+ </p>  
  
  - Swagger Endpoints documentation
 
