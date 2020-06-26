@@ -37,7 +37,7 @@ Ticketor is a helpdesk API to assist users in contacting support. We safely hand
  </p>  
  
  - Swagger Endpoints documentation
- Start the API(see instalation topic below) end go to [Swagger documentation endpoint](http://localhost:5000/docs/)
+ <p>Start the API(see instalation topic below) end go to [Swagger documentation endpoint](http://localhost:5000/docs/)</p>
    
 
 ## Installation
