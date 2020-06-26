@@ -18,7 +18,7 @@
 </p>
 
 # Ticketor
-Ticketor is a helpdesk API to assist users in contacting support. We safely handle tickets sent to technical support, filtering in different ways
+Ticketor is a helpdesk API to assist users in contacting support. We safely handle tickets sent to technical support filtering in different ways
 
 ## Features
  - Token Based Authentication
